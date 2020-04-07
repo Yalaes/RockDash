@@ -44,6 +44,5 @@ drag_margin_v_enabled = true
 anims/Roll = SubResource( 2 )
 
 [node name="StartTimer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_Timer_timeout"]
