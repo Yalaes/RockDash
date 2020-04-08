@@ -4,6 +4,8 @@ extends Node
 # then levelParts 1, 2 ,3 etc
 export(Array, PackedScene) var levelParts 
 
+###DEBUG messages
+onready var label = $CanvasLayer/Control/Label
 
 var Player = preload("res://Objets/Player.tscn")
 var player
@@ -19,6 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	init_level() 
+	
 func init_level() -> void:
 	###instanciate the player and levelPart 0 and 1		
 	#instanciate the player at playerstartposition (position 2d)
@@ -39,6 +42,7 @@ func init_level() -> void:
 	var levelPart1 = levelParts[2].instance()
 	add_child(levelPart1)
 	levelPart1.position.x = Global.VIEWPORT_SIZE.x * 2
-
+	
 func spawn_level_part() -> void:
 	pass
+

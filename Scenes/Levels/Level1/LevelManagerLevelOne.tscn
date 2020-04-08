@@ -1,9 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scenes/Levels/LevelManager.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Levels/Level1/LevelOnePartOne.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Levels/Level1/LevelOnePart2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Levels/LevelStart.tscn" type="PackedScene" id=4]
 
 [node name="LevelManagerLevelOne" instance=ExtResource( 1 )]
-levelParts = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]

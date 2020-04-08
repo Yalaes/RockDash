@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Levels/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Levels/Level1/LevelOnePartOne.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Levels/Level1/LevelOnePart2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Levels/LevelStart.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI/Controltest.tscn" type="PackedScene" id=5]
 
 [node name="LevelManager" type="Node"]
 script = ExtResource( 1 )
 levelParts = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource( 5 )]
 
 [node name="PlayerStartPos" type="Position2D" parent="."]
 position = Vector2( 256, 448 )

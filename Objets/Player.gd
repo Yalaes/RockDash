@@ -2,34 +2,29 @@ extends KinematicBody2D
 
 onready var animPlayer = $AnimationPlayer
 var velocity: = Vector2.ZERO
-
 var speed: = Global.GRID_SIZE * 8
 var jump: = Global.GRID_SIZE * 18
-var gravity: = Global.GRID_SIZE * 100
+var gravity: = Global.GRID_SIZE * 105
 var max_gravity: = gravity * 5
-
 var is_jumping: bool = false
-
 var can_move = false
 
 func _physics_process(delta: float) -> void:
 	
 	if can_move:
 		velocity.x = speed
-		_jump()
-				
+		_jump()				
 		velocity = move_and_slide(velocity, Vector2.UP)
 		_gravity(delta)
+		
 		if is_on_floor():
-			is_jumping = false
-		
+			is_jumping = false	
+				
 		if !is_on_floor() and !is_jumping:
-			anim_check()
-			
+			anim_check()		
 	else:
-		_gravity(delta)
-		
-		
+		_gravity(delta)		
+				
 func _jump() -> void:
 	if Input.is_action_pressed("jump"):
 		if !is_jumping:
